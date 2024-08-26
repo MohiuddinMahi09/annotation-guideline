@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+    text-align: justify;
+  padding: 8px;
+}
+th {
+   text-align: justify;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+body{
+
+margin : 100px;
+}
+</style>
+</head>
+
+<body>
+<div inert>
+  <h1 align="center">Annotation guideline</h1>
+<h2>Dictionary word annotation process</h2>
+<ol>
+  <li>If a word found in ‘বাংলা-বানান অভিধান’ (hard copy), then it should be taken as correct (Printing errors are exceptional).</li>
+  <li>If the spelling of the word is different from the one in the ‘বাংলা-বানান অভিধান’, then the word in the ‘বাংলা-বানান অভিধান’ is correct, the spelling in the rest of the dictionary should be treated as wrong.</li>
+  <li>If a word is not found in the ‘বাংলা-বানান অভিধান’, but found in the ‘আধুনিক বাংলা অভিধান’; In that case the ‘আধুনিক বাংলা অভিধান’ spelling will be considered correct.</li>
+  <li>If there is a word that is not in ‘বাংলা-বানান অভিধান’ or not found in ‘আধুনিক বাংলা অভিধান’, then the latest spelling rules of Bangla Academy should be followed for getting correct spelling.</li>
+  <li>If the correct spelling of a word cannot be resolved by the above rules, one should refrain from deciding on that word.</li>
+  <li>If dictionary indicates as error (অশুদ্ধ কিন্তু প্রচলিত) and excluded spelling (বর্জিত বানান) should treat as incorrect but if indicates as only conventional spelling (প্রচলিত বানান) should treat as correct.</li>
+</ol>
+
+
+<h2>Non-dictionary word annotation process</h2>
+
+<ol>
+
+  <li>Should follow Bangla Academy’s latest rules for verifiyng a word and for providing a correction.</li>
+  <li>If Bangla Academy suggests more option to write particular words, then annotator should keep both as right form.</li>
+  <li>If any word found that has no instruction by Bangla Academy, then should follow Bangla Academy’s latest dictionary, books or universally accepted institution or Language related books' rules.</li>
+  <li>For new words, should make decisions depends on Languages structure, custom, grammatical formation etc. Then justify by semantic-based method. That particular word is frequently used or not— it also be justified.</li>
+  <li>No symbols and emojis are treated as a part of a word token.</li>
+  <li>If found any word with affix, should check first base word correct or not and then should verify the use of affix and finally should check the combination is correct or not.</li>
+  <li>Most frequently used recognized language related books, well known newspapers, writings and websites' new word should accept as correct word if does not violate latest Bangla Academy's rules. </li>
+  <li>Single character should detect as invalid.</li>
+</ol>
+
+<h2>Named Entity annotation process</h2>
+
+<ol>
+<li>For places, institutions & others should follow government & institutional spelling.</li>
+<li>For foreign name entity should keep internationally recognized (English form) & native language spelling both.</li>
+<li>For prominent figure should follow his/her name’s recognized spelling.</li>
+</ol>
+
+<h2>Foreign Word annotation process</h2>
+<ol>
+  <li>For Foreign Word Should follow Bangla Academy’s latest rule & dictionaries.
+  </li>
+  <li>Most commonly used words which have no entry in dictionary should keep spelling following pronounce instructed by Bangla Academy.</li>
+  <li>If in any words used internationally recognized (English form) & native language spelling, should keep both.</li>
+</ol>
+
+
+<h2>Correction providing process</h2>
+<p>Correction of a non-word should be provided following the latest Bangla Academy’s spelling rules and following dictionary hierarchy– </p>
+
+<ol>
+<li>If a word found in ‘বাংলা-বানান অভিধান’ (hard copy), then it should be taken as correct (Printing errors are exceptional).</li>
+<li>If the spelling of the word is different from the one in the ‘বাংলা-বানান অভিধান’, then the word in the ‘বাংলা-বানান অভিধান’ is correct, the spelling in the rest of the dictionary should be treated as wrong.</li>
+<li>If a word is not found in the ‘বাংলা-বানান অভিধান’, but found in the ‘আধুনিক বাংলা অভিধান’; In that case the ‘আধুনিক বাংলা অভিধান’ spelling will be considered correct.</li>
+<li>If there is a word that is not in ‘বাংলা-বানান অভিধান’ or not found in ‘আধুনিক বাংলা অভিধান’, then the latest spelling rules of Bangla Academy should be followed for getting correct spelling.</li>
+<li>If the correct spelling of a word cannot be resolved by the above rules, one should refrain from deciding on that word.</li>
+<li>Correction of non-word should provide expecting lowest edit distance (Lowest to highest transformation- like, অপরা < অপর/অপেরা/অপরাধ/অপরাস্ত/অপরাহ্ন) and should ignore relatively highest edit distance based corrections .</li>
+</ol>
+
+<h2>Use Case annotation process</h2>
+
+<ol>
+  <li>If a word token used as a name (Name of a place, person and organization), should be marked as a Named Entity, if used as general word, should be marked as a general vocabulary and if used as both Named Entity & general word, should be marked as both case (Named Entity and general vocabulary).</li>
+</ol>
+
+<h2>Suffix annotation process</h2>
+
+<ol>
+
+  <li>In case a word used as only suffix then should provide correction starting with hyphen (like :-তে).</li>
+  <li>If suffix used as both general vocabulary/named entity and suffix should provide both types of corrections, starting with hyphen and without hyphen.</li>
+
+</ol>
+
+<h2>Invalid annotation process</h2>
+
+<ol>
+  <li>If any word token does not mean anything or a fragmented portion of a word, it should be marked as invalid.</li>
+  <li>If a non-word or a fragmented portion of a word is unable to correct applying the lowest edit distance, it should be marked as a invalid word.</li>
+</ol>
+
+<h2>Special cases annotation process</h2>
+
+<ol>
+  <li>Whether a word token is existent or non-existent in Banan Ovidhan, Adhunik Ovidhan, or any other dictionaries: if the word token follows the latest Bangla Academy’s spelling rules, it should be marked as a correct word, otherwise a non-word error.</li>
+  <li>Bangla Academy suggests, one can write last অ-ধ্বনি as ও-কার following pronounce in any word</li>
+  <li>So, everyone has choice to write last letter ও-কার by following pronounce or not</li>
+  <li>We keep both form as correct</li>
+  <li>Only forward slash (/) and hyphen (-), can be used between two valid word tokens.</li>
+  <li>Only single dot (.) and apostrophe (') can be used as a character of a valid word token.</li>
+  <li>Normally visarga (ঃ) is not allowed at the end of Bangla word but if found in Banan or Adhunik ovidhan can be treated as correct.</li>
+  <li>As visarga (ঃ) is not allowed at the end of Bangla word that can be a colon (:) based on text context.</li>
+</ol>
+
+<h2>Sentence annotation process for Grammar solution</h2>
+
+<ol>
+  <li>Bangla Academy 'Standard Bangla Practical Grammar' (প্রমিত বাংলা ব্যাবহারিক ব্যাকরণ) and Bangla Academy’s others latest rules should follow in identifying and correcting grammatical mistakes in sentences.</li>
+  <li>If any cases there has no direct instruction from Bangla Academy annotator should follow recognized grammar books and keep its reference.</li>
+  <li>Should check from various angle if the sentence is correct or incorrect.  </li>
+  <li>Should give priority if any linguistic or grammatical way to keep sentences as correct.</li>
+  <li>Only should mark as incorrect & give reason/error categories, when it is really incorrect by language structure and custom.</li>
+  <li>Should identify multiple grammar error and provide correction is if necessary.</li>
+  <li>Some errors can be interpreted as multiple grammatical errors, in this case, the most acceptable error should mark as an error and should provide correction is accordingly.</li>
+  <li>Emojis, symbols, and foreign words should avoid.</li>
+  <li>Run-on errors (Non-space errors), Split word errors (One-space errors) and real word errors should treat as Grammar errors.</li>
+</ol>
+
+</body>
+</html>
+
